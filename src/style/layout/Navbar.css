@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.navbar button {
+  background-color: white;
+  color: #1e3a8a;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.navbar button:hover {
+  background-color: #3b5998;
+  color: white;
+}

@@ -1,0 +1,30 @@
+.question-options {
+    display: flex;
+    flex-direction: column; /* Układa odpowiedzi pionowo */
+    gap: 10px; /* Dodaje odstępy między odpowiedziami */
+  }
+  
+  .question-option {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .selected {
+    background-color: lightgray;
+  }
+  
+  .correct {
+    background-color: #4caf50; /* Zielony dla poprawnej */
+    color: white;
+  }
+  
+  .incorrect {
+    background-color: #f44336; /* Czerwony dla błędnej */
+    color: white;
+  }
+  

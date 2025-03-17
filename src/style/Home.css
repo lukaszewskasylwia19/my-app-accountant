@@ -1,0 +1,13 @@
+.home-container {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+  

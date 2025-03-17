@@ -1,0 +1,54 @@
+.lesson-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.lesson-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.lesson-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lesson-option {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.lesson-option.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.lesson-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* ✅ Doda przestrzeń między przyciskami */
+  margin-top: 16px;
+}
+
+.lesson-feedback {
+  text-align: center;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.lesson-score {
+  text-align: center;
+  margin-top: 16px;
+  font-weight: bold;
+}
