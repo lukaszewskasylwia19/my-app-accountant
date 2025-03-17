@@ -8,7 +8,7 @@ interface HomeProps {
 export default function Home({ setView }: HomeProps) {
   return (
     <div className="home-container">
-      <h1>Witaj w Księgowość Quiz!</h1>
+      <h1>Księgowość - Quiz!</h1>
       <p>Wybierz opcję, aby rozpocząć:</p>
       <div className="home-buttons">
         <Button onClick={() => setView("start")}>Start</Button>

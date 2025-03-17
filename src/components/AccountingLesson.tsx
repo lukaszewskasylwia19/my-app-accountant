@@ -98,34 +98,45 @@ export default function AccountingLesson() {
   };
 
   return (
-    <Layout setSection={setCurrentView}>
+    <Layout >
       {currentView === "home" && <Home setView={setCurrentView} />}
       
       {currentView === "start" && !selectedCategory && (
-        <CategorySelection categories={Object.keys(exercises)} onSelectCategory={setSelectedCategory} />
-      )}
+  <div>
+    <button onClick={() => setCurrentView("home")}>⬅️ Cofnij</button>
+    <CategorySelection
+      categories={Object.keys(exercises)}
+      onSelectCategory={setSelectedCategory}
+    />
+  </div>
+)}
 
-      {currentView === "start" && selectedCategory && (
-        <Card>
-          <Question
-            question={exercises[selectedCategory][questionIndex]?.question || ""}
-            options={exercises[selectedCategory][questionIndex]?.options || []}
-            selectedAnswer={selectedAnswer}
-            setSelectedAnswer={setSelectedAnswer}
-            correctAnswer={exercises[selectedCategory][questionIndex]?.correctAnswer || ""}
-            feedback={feedback}
-          />
-          <div className="lesson-buttons">
-            <Button onClick={checkAnswer}>Sprawdź</Button>
-            <Button onClick={() => setQuestionIndex(Math.floor(Math.random() * exercises[selectedCategory].length))}>
-              Następne pytanie
-            </Button>
-            <Button onClick={() => setSelectedCategory(null)}>Powrót do kategorii</Button>
-          </div>
-          {feedback && <p className={`lesson-feedback ${feedback.includes("✅") ? "correct" : "incorrect"}`}>{feedback}</p>}
-          <p className="lesson-score">Twój wynik: {score}</p>
-        </Card>
-      )}
+
+{currentView === "start" && selectedCategory && (
+  <div>
+    <button onClick={() => setSelectedCategory(null)}>⬅️ Cofnij</button>
+    <Card>
+      <Question
+        question={exercises[selectedCategory][questionIndex]?.question || ""}
+        options={exercises[selectedCategory][questionIndex]?.options || []}
+        selectedAnswer={selectedAnswer}
+        setSelectedAnswer={setSelectedAnswer}
+        correctAnswer={exercises[selectedCategory][questionIndex]?.correctAnswer || ""}
+        feedback={feedback}
+      />
+      <div className="lesson-buttons">
+        <Button onClick={checkAnswer}>Sprawdź</Button>
+        <Button onClick={() => setQuestionIndex(Math.floor(Math.random() * exercises[selectedCategory].length))}>
+          Następne pytanie
+        </Button>
+        <Button onClick={() => setSelectedCategory(null)}>Powrót do kategorii</Button>
+      </div>
+      {feedback && <p className={`lesson-feedback ${feedback.includes("✅") ? "correct" : "incorrect"}`}>{feedback}</p>}
+      <p className="lesson-score">Twój wynik: {score}</p>
+    </Card>
+  </div>
+)}
+
 
       {currentView === "ranking" && <Ranking ranking={ranking} resetRanking={() => setRanking([])} />}
       

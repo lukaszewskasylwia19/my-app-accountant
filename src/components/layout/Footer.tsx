@@ -1,4 +1,5 @@
-import "../../../style/layout/Footer.css"; // ✅ Poprawiona ścieżka
+import "/src/style/layout/Footer.css";
+
 
 export default function Footer() {
   return (
