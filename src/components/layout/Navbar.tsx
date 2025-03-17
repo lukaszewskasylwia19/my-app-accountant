@@ -1,4 +1,5 @@
 import "../../../style/layout/Navbar.css"; // ✅ Poprawiona ścieżka
+
 interface NavbarProps {
   setSection: (section: string) => void;
 }
